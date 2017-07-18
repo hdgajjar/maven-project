@@ -25,6 +25,7 @@ http://www.mulesoft.org/schema/mule/bofa-bank-enity-routing http://www.mulesoft.
     <flow name="retriveFlights">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/flights" doc:name="HTTP"/>
         <logger message="Inbound FLights request" level="INFO" doc:name="Logger"/>
+        <logger message="Ready For Getting Data from DB" level="INFO" doc:name="Logger"/>
         <db:select config-ref="Derby_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[SELECT * FROM FLIGHTS]]></db:parameterized-query>
         </db:select>
